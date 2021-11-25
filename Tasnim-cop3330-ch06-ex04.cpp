@@ -60,14 +60,13 @@ int main()
 
         if (x == 1)
         {
-            cout << "This name has been entered twice.";
+            cout << "This name has been entered twice.\n";
             break;
         }
         else
         {
             if (temp_name == "NoName" && temp_value == 0) //if user enter this , print the vector and end the program
             {
-                print_vector(v);
                 break;
             }
             else
@@ -77,6 +76,9 @@ int main()
             }
         }
     }
+
+     print_vector(v);
+
 
     return 0;
 }
