@@ -8,8 +8,7 @@ public:
     int value;
 };
 
-
- //print the vector
+//print the vector
 void print_vector(vector<name_value> &v)
 {
     for (int i = 0; i < v.size(); i++)
@@ -36,13 +35,21 @@ int compare_name(vector<name_value> &v, string name)
     return 0;
 }
 
+name_value return_obj(string name, int value)
+{
+    name_value obj;
+    obj.name = name;
+    obj.value = value;
+
+    return obj;
+}
+
 int main()
 {
     string temp_name;
     int temp_value;
 
     vector<name_value> v;
-    name_value obj;
 
     while (1)
     {
@@ -54,7 +61,7 @@ int main()
         if (x == 1)
         {
             cout << "This name has been entered twice.";
-             break;
+            break;
         }
         else
         {
@@ -62,12 +69,11 @@ int main()
             {
                 print_vector(v);
                 break;
-            }else
+            }
+            else
             {
-                obj.name=temp_name;
-                obj.value=temp_value;
-                v.push_back(obj); //add the name and value to the vector
-
+                name_value obj = return_obj(temp_name,temp_value);
+                v.push_back(obj);
             }
         }
     }
